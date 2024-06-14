@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+	<meta name="generator" content="Hugo 0.127.0">
+<base href="https://hack-dot-com.github.io/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sitename</title>
+  <meta name="description" content="" />
+  <script>
+    function setThemeBasedOnPreference() {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+
+    function updateTheme() {
+      
+      if ("color-theme" in localStorage) {
+        var theme = localStorage.getItem("color-theme");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      }
+      
+      else {
+        setThemeBasedOnPreference();
+      }
+    }
+
+    updateTheme();
+
+    
+    if (!("color-theme" in localStorage) && !window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    }
+
+    
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(function () {
+      if (!("color-theme" in localStorage)) {
+        setThemeBasedOnPreference();
+      }
+    });
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="/css/lightbox.min.css" rel="stylesheet" />
+  <script defer src="/js/alpine.js"></script>
+  <script defer src="/fontawesome/js/brands.js"></script>
+  <script defer src="/fontawesome/js/solid.js"></script>
+  <script defer src="/fontawesome/js/regular.js"></script>
+  <script defer src="/fontawesome/js/fontawesome.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body class="bg-white dark:bg-slate-800"><header class="bg-zinc-50 dark:bg-slate-700">
+  <div class="mx-auto w-full max-w-6xl px-6 py-6 text-gray-200">
+    <nav x-data="accordion(6)" class="top-0 flex w-full flex-wrap items-center justify-between tracking-wide">
+      
+      <div class="w-48 self-center">
+        <a href="/blog/posts" class="logo">
+          
+          <div class="text-2xl font-semibold text-gray-700 hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-200 sm:mr-8">sitename</div>
+          
+        </a>
+      </div>
+      
+
+      
+      
+      
+      <div x-cloak @click="handleClick()" x-data="{open : false}" class="block cursor-pointer text-gray-700 dark:text-gray-100 lg:hidden">
+        <button @click="open = ! open" class="h-6 w-6 pt-2">
+          <svg x-show="! open" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" :clas="{'transition-full each-in-out transform duration-500':! open}">
+            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+            <path d="M7.94977 11.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M7.94977 23.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M7.94977 35.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+
+          <svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      <div x-ref="tab" :style="handleToggle()" class="relative max-h-0 w-full overflow-hidden transition-all duration-700 lg:hidden">
+        <div class="my-3 flex flex-col space-y-4 text-lg text-gray-600">
+          
+
+          <a href="/" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>home</span></a>
+
+          
+
+          <a href="/" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>posts</span></a>
+
+          
+
+          <a href="/about" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>about</span></a>
+
+          
+        </div>
+      </div>
+      
+      
+
+      
+      <div class="hidden w-full lg:flex lg:w-auto lg:items-center">
+        <div class="list-reset flex-1 items-end justify-center gap-14 text-lg text-gray-500 lg:flex lg:pt-0">
+          
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/"> home </a>
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/"> posts </a>
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/about"> about </a>
+          
+
+          
+        </div>
+      </div>
+
+      
+      
+      <button id="theme-toggle" type="button" class="lg:max-w-5 xs:hidden absolute right-16 top-[26px] rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-transparent dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-transparent lg:relative lg:right-auto lg:top-auto lg:ml-2">
+        <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <script>
+    
+    document.addEventListener("alpine:init", () => {
+      Alpine.store("accordion", {
+        tab: 0,
+      });
+      Alpine.data("accordion", (idx) => ({
+        init() {
+          this.idx = idx;
+        },
+        idx: -1,
+        handleClick() {
+          this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+        },
+        handleRotate() {
+          return this.$store.accordion.tab === this.idx ? "-rotate-180" : "";
+        },
+        handleToggle() {
+          return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : "";
+        },
+      }));
+    });
+    
+  </script>
+</header>
+
+
+<div class="py-8 sm:py-8">
+  <div class="mx-auto mb-24 flex max-w-6xl px-8 justify-between">
+    <div class="max-w-2xl">
+      <div class="mt-8 space-y-16">
+        
+
+        
+        
+        <article class="flex max-w-xl flex-col items-start justify-between">
+          <h2 class="my-3 text-2xl font-semibold leading-6 dark:text-gray-100 text-gray-900 dark:group-hover:text-gray-300 group-hover:text-gray-600">
+            <a href="/posts/the-enchanted-isles-of-lunaria/">The Enchanted Isles of Lunaria</a>
+          </h2>
+          <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+              </svg>
+              <time datetime="2022-07-29 11:13:32 -0400 -0400">29 July 2022</time>
+            </div>
+
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>6 minutes read</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            
+              <a href="/tags/emmc" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">eMMC</a>
+            
+              <a href="/tags/jtag" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">JTAG</a>
+            
+              <a href="/tags/uart" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">UART</a>
+            
+          </div>
+          <div class="group relative">
+            <p class="mt-5 line-clamp-3 text-base leading-6 [&>*]:dark:text-gray-100 dark:text-gray-100 text-gray-600">In the annals of maritime lore, there exists a legend, one that speaks of an archipelago untouched by time and unmarred by civilization. Lunaria, as it is known, is more than just islands; it is where magic intertwines with nature, crafting tales of wonder. This place, beyond even the most elaborate of fables, thrived in a dimension separate from our mundane world. Many considered it just a fragment of imagination, a story passed down through countless generations.</p>
+
+          </div>
+        </article>
+        
+        
+        <article class="flex max-w-xl flex-col items-start justify-between">
+          <h2 class="my-3 text-2xl font-semibold leading-6 dark:text-gray-100 text-gray-900 dark:group-hover:text-gray-300 group-hover:text-gray-600">
+            <a href="/posts/the-awakening-of-valoria/">The Awakening of Valoria</a>
+          </h2>
+          <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+              </svg>
+              <time datetime="2022-07-28 11:00:59 -0400 -0400">28 July 2022</time>
+            </div>
+
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>11 minutes read</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            
+              <a href="/tags/jtag" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">JTAG</a>
+            
+              <a href="/tags/spi" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">SPI</a>
+            
+          </div>
+          <div class="group relative">
+            <p class="mt-5 line-clamp-3 text-base leading-6 [&>*]:dark:text-gray-100 dark:text-gray-100 text-gray-600">The Kingdom of Valoria, hidden amidst towering mountains and the serene embrace of the sea, was a treasure trove of tales and tradition. Its rich tapestry of history and vibrant culture was the stuff of legends. And then, on a day that started like any other, the land was to see a phenomenon that would be recounted for generations.
+The Rise of the Silver Comet As the first light of dawn stretched across the horizon, a mesmerizing silvery streak pierced the sky, casting a magical glow.</p>
+
+          </div>
+        </article>
+        
+        
+        <article class="flex max-w-xl flex-col items-start justify-between">
+          <h2 class="my-3 text-2xl font-semibold leading-6 dark:text-gray-100 text-gray-900 dark:group-hover:text-gray-300 group-hover:text-gray-600">
+            <a href="/posts/the-commotion-in-paris/">The Commotion in Paris</a>
+          </h2>
+          <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+              </svg>
+              <time datetime="2022-07-27 10:58:08 -0400 -0400">27 July 2022</time>
+            </div>
+
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>5 minutes read</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            
+              <a href="/tags/emmc" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">eMMC</a>
+            
+              <a href="/tags/i2c" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">I2C</a>
+            
+              <a href="/tags/usb" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">USB</a>
+            
+          </div>
+          <div class="group relative">
+            <p class="mt-5 line-clamp-3 text-base leading-6 [&>*]:dark:text-gray-100 dark:text-gray-100 text-gray-600">Paris of the late 15th century was no stranger to noise and clamor, but on a chilly morning, three hundred and forty-eight years, six months, and nineteen days ago, an unexpected uproar shook its residents from their sleep.
+The Sound of Bells All around the city, bells echoed with a fervor seldom experienced. The harmonious cacophony resounded through the streets. From the historic heart of the city to its sprawling outskirts, from the hallowed university corridors to the charming and secluded town alleys, their chimes were not just sounds but heralds of a significant day.</p>
+
+          </div>
+        </article>
+        
+        
+        <article class="flex max-w-xl flex-col items-start justify-between">
+          <h2 class="my-3 text-2xl font-semibold leading-6 dark:text-gray-100 text-gray-900 dark:group-hover:text-gray-300 group-hover:text-gray-600">
+            <a href="/posts/markdown-syntax/">Markdown Syntax Guide</a>
+          </h2>
+          <div class="flex items-center gap-x-4 text-xs">
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+              </svg>
+              <time datetime="2019-03-11 00:00:00 &#43;0000 UTC">11 March 2019</time>
+            </div>
+
+            <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>3 minutes read</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            
+              <a href="/tags/markdown" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">markdown</a>
+            
+              <a href="/tags/css" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">css</a>
+            
+              <a href="/tags/html" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">html</a>
+            
+          </div>
+          <div class="group relative">
+            <p class="mt-5 line-clamp-3 text-base leading-6 [&>*]:dark:text-gray-100 dark:text-gray-100 text-gray-600">This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p>
+
+          </div>
+        </article>
+        
+      </div>
+      <div class="my-16">
+        
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+    <div class="mt-12 hidden sm:block border-l-2 max-w-[256px] border-gray-200 dark:border-gray-700 pl-8">
+      <div class="">
+  <p class="mb-4 text-lg font-bold text-gray-700 dark:text-gray-100">Tags</p>
+  <div class="flex flex-wrap gap-2">
+      
+    <a href="/tags/css/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Css</a>
+     
+    <a href="/tags/emmc/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">EMMC</a>
+     
+    <a href="/tags/html/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Html</a>
+     
+    <a href="/tags/i2c/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">I2C</a>
+     
+    <a href="/tags/jtag/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">JTAG</a>
+     
+    <a href="/tags/markdown/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Markdown</a>
+     
+    <a href="/tags/spi/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">SPI</a>
+     
+    <a href="/tags/uart/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">UART</a>
+     
+    <a href="/tags/usb/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">USB</a>
+    
+  </div>
+</div>
+
+      <div class="mt-8">
+  <p class="mb-4 text-lg font-bold text-gray-700 dark:text-gray-100">Contact</p>
+  <div class="mt-4 flex flex-col gap-4 pb-6">
+    
+    <a href="https://www.github.com//" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-github text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">GitHub</span>
+    </a>
+    
+    <a href="http://twitter.com/" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-twitter text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">Twitter</span>
+    </a>
+    
+    <a href="http://www.linkedin.com/company/" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-linkedin-in text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">LinkedIn</span>
+    </a>
+    
+    <a href="mailto:info@example.com" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-solid fa-envelope text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">Email</span>
+    </a>
+    
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<footer class="bg-light" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="mt-16 border-t-2 border-gray-200 pt-8 dark:border-gray-700 sm:mt-20 lg:mt-24">
+      <p class="text-center text-base leading-5 text-gray-900 dark:text-gray-100">&copy; 2024 sitename. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/darkmode.js"></script>
+    <script src="/js/lightbox-plus-jquery.min.js"></script>
+    <script src="/js/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: "rgb(71 85 105)",
+        textColor: "#fff",
+        scrollDuration: 300, 
+        
+        cornerOffset: 30, 
+      });
+    </script>
+  </body>
+</html>

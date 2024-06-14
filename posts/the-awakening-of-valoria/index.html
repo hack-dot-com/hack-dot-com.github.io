@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<base href="https://hack-dot-com.github.io/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sitename - The Awakening of Valoria</title>
+  <meta name="description" content="The Awakening of Valoria" />
+  <script>
+    function setThemeBasedOnPreference() {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }
+
+    function updateTheme() {
+      
+      if ("color-theme" in localStorage) {
+        var theme = localStorage.getItem("color-theme");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      }
+      
+      else {
+        setThemeBasedOnPreference();
+      }
+    }
+
+    updateTheme();
+
+    
+    if (!("color-theme" in localStorage) && !window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    }
+
+    
+    window.matchMedia("(prefers-color-scheme: dark)").addListener(function () {
+      if (!("color-theme" in localStorage)) {
+        setThemeBasedOnPreference();
+      }
+    });
+  </script>
+  
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="/css/lightbox.min.css" rel="stylesheet" />
+  <script defer src="/js/alpine.js"></script>
+  <script defer src="/fontawesome/js/brands.js"></script>
+  <script defer src="/fontawesome/js/solid.js"></script>
+  <script defer src="/fontawesome/js/regular.js"></script>
+  <script defer src="/fontawesome/js/fontawesome.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body class="bg-white dark:bg-slate-800"><header class="bg-zinc-50 dark:bg-slate-700">
+  <div class="mx-auto w-full max-w-6xl px-6 py-6 text-gray-200">
+    <nav x-data="accordion(6)" class="top-0 flex w-full flex-wrap items-center justify-between tracking-wide">
+      
+      <div class="w-48 self-center">
+        <a href="/blog/posts" class="logo">
+          
+          <div class="text-2xl font-semibold text-gray-700 hover:text-gray-500 dark:text-gray-100 dark:hover:text-gray-200 sm:mr-8">sitename</div>
+          
+        </a>
+      </div>
+      
+
+      
+      
+      
+      <div x-cloak @click="handleClick()" x-data="{open : false}" class="block cursor-pointer text-gray-700 dark:text-gray-100 lg:hidden">
+        <button @click="open = ! open" class="h-6 w-6 pt-2">
+          <svg x-show="! open" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" :clas="{'transition-full each-in-out transform duration-500':! open}">
+            <rect width="48" height="48" fill="white" fill-opacity="0.01"></rect>
+            <path d="M7.94977 11.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M7.94977 23.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M7.94977 35.9498H39.9498" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+
+          <svg x-show="open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      
+
+      
+      <div x-ref="tab" :style="handleToggle()" class="relative max-h-0 w-full overflow-hidden transition-all duration-700 lg:hidden">
+        <div class="my-3 flex flex-col space-y-4 text-lg text-gray-600">
+          
+
+          <a href="/" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>home</span></a>
+
+          
+
+          <a href="/" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>posts</span></a>
+
+          
+
+          <a href="/about" class="block w-full pt-3 text-left text-xl font-normal leading-none tracking-wider text-gray-700 dark:text-gray-100"><span>about</span></a>
+
+          
+        </div>
+      </div>
+      
+      
+
+      
+      <div class="hidden w-full lg:flex lg:w-auto lg:items-center">
+        <div class="list-reset flex-1 items-end justify-center gap-14 text-lg text-gray-500 lg:flex lg:pt-0">
+          
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/"> home </a>
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/"> posts </a>
+          
+
+          <a class="text-base font-normal leading-none tracking-wider text-gray-700 focus:text-opacity-80 focus:outline-none dark:text-gray-100 xl:mt-0" href="/about"> about </a>
+          
+
+          
+        </div>
+      </div>
+
+      
+      
+      <button id="theme-toggle" type="button" class="lg:max-w-5 xs:hidden absolute right-16 top-[26px] rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-transparent dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-transparent lg:relative lg:right-auto lg:top-auto lg:ml-2">
+        <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" aria-label="Dark or Light Mode" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </nav>
+  </div>
+  <script>
+    
+    document.addEventListener("alpine:init", () => {
+      Alpine.store("accordion", {
+        tab: 0,
+      });
+      Alpine.data("accordion", (idx) => ({
+        init() {
+          this.idx = idx;
+        },
+        idx: -1,
+        handleClick() {
+          this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+        },
+        handleRotate() {
+          return this.$store.accordion.tab === this.idx ? "-rotate-180" : "";
+        },
+        handleToggle() {
+          return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : "";
+        },
+      }));
+    });
+    
+  </script>
+</header>
+
+
+<div class="mx-auto mb-24 flex max-w-6xl justify-between">
+  <div class="mt-16">
+    <div class="flex max-w-xl flex-col lg:px-4 px-8 gap-2 items-start justify-between">
+      <h2 class=" my-3 text-4xl font-black dark:text-gray-100 leading-tight text-gray-900 group-hover:text-gray-600">The Awakening of Valoria
+      </h2>
+      <div class="flex items-center gap-x-4 text-xs">
+        <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+          </svg>
+          <time datetime="2022-07-28 11:00:59 -0400 -0400">28 July 2022</time>
+        </div>
+
+        <div class="flex space-x-1 text-sm dark:text-gray-200 text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 pb-px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span>11 minutes read</span>
+        </div>
+      </div>
+      <div class="mt-4">
+        
+          <a href="/tags/jtag" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">JTAG</a>
+        
+          <a href="/tags/spi" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-100">SPI</a>
+        
+      </div>
+    </div>
+    <div class="js-toc-content prose dark:prose-invert mt-4 break-words px-8 lg:prose-lg sm:mt-12 lg:col-span-2 lg:mx-4 lg:px-0"><p>The Kingdom of Valoria, hidden amidst towering mountains and the serene embrace of the sea, was a treasure trove of tales and tradition. Its rich tapestry of history and vibrant culture was the stuff of legends. And then, on a day that started like any other, the land was to see a phenomenon that would be recounted for generations.</p>
+<h2 id="the-rise-of-the-silver-comet">The Rise of the Silver Comet</h2>
+<p>As the first light of dawn stretched across the horizon, a mesmerizing silvery streak pierced the sky, casting a magical glow. This wasn&rsquo;t just any celestial entity. This was the Silver Comet, a sign, a phenomenon, and a harbinger of change that was whispered about in hushed tones by the old.</p>
+<h3 id="whispers-and-wonders">Whispers and Wonders</h3>
+<p>Valoria awoke to the comet&rsquo;s glow with awe and intrigue. As its radiant tail spanned the horizon, people from every corner of the city stepped out of their abodes to marvel at the sight. Everywhere you turned, there were gasps of wonder, pointing fingers, and whispers of ancient stories. The elders recounted tales of the last time such a comet graced the skies, while the young, with eyes wide with wonder, listened intently. As hours passed, the whispers turned into animated discussions in marketplaces, taverns, and city squares. The Silver Comet, even before reaching its zenith, had captured the heart and soul of Valoria.</p>
+<h3 id="celestial-alignment">Celestial Alignment</h3>
+<p>The royal observatory, usually a quiet place, became a hub of activity. Astronomers and scholars peered through telescopes, making frantic notes and sketches. They observed that the Silver Comet aligned perfectly with a constellation known as the Valorian Star Cluster. This alignment, they theorized, might only occur once in several millennia. The implications were profound. Some believed it to be a powerful omen that amplified the comet&rsquo;s mystical energies. Others saw it as a sign of a cosmic balance being restored. Amidst all this, the common folk found solace in nightly gatherings, where they would lie on open grounds, staring at the sky, tracing the comet&rsquo;s path among the stars.</p>
+<h3 id="the-poets-muse">The Poet&rsquo;s Muse</h3>
+<p>Poetry, an art form deeply cherished in Valoria, found a new muse in the Silver Comet. Poets, inspired by its ethereal beauty, filled pages with verses that evoked emotions ranging from love and hope to melancholy and introspection. The royal court held special sessions where bards and minstrels from across the kingdom presented their comet-inspired compositions. Their words painted vivid images – of the comet as a celestial dancer, of its tail weaving stories in the sky, of its silvery glow as tears of the gods. Through their verses, they immortalized this cosmic event, ensuring that even ages later, Valorians would sing songs of the day the sky was painted silver.</p>
+<h2 id="chronicles-and-legends">Chronicles and Legends</h2>
+<p>Every corner of Valoria echoed with stories about the comet. Ancient scrolls and dusty books from the vast libraries recounted its rare appearances. It was a celestial event that graced the skies only once every thousand years.</p>
+<h3 id="the-prophecy">The Prophecy</h3>
+<p>The great hall of prophecies, a place of reverence in Valoria, held a particular legend about the Silver Comet. This legend spoke of a time when the comet would herald an epoch of great transformation. It spoke of rebirths, of kingdoms rising and falling, and of heroes chosen by destiny. The prophecy was detailed – it told of skies painted with silver, of nights brighter than days, and of a wind that would carry whispers from the past. Many scholars believed that the time mentioned in this prophecy was now. They pored over the ancient texts, trying to decipher clues that might indicate what the kingdom should expect or prepare for. With each passing day, the legend seemed less like a story and more like a foretelling of the present.</p>
+<h3 id="old-seers-visions">Old Seer&rsquo;s Visions</h3>
+<p>In a secluded grove, away from the hustle and bustle of Valoria&rsquo;s capital, lived the oldest seer of the land. Known for her uncanny visions, she had predicted many events that had come to pass. As the Silver Comet made its journey across the skies, she too had visions. She saw seas turning into mirrors, forests whispering secrets, and mountains sharing tales from eons past. She spoke of spirits from ancient times walking among the living, guiding them, and sharing their wisdom. Many sought her out, traveling days and nights, to hear her recount these visions. Each vision was like a piece of a jigsaw, hinting at the larger picture the Silver Comet was a part of.</p>
+<h3 id="forgotten-fables">Forgotten Fables</h3>
+<p>Amidst the comet-fueled frenzy, a group of scholars stumbled upon a trove of forgotten fables in the deepest chambers of Valoria&rsquo;s grand library. These tales, believed to be myths, detailed interactions of the Silver Comet with ancient Valorians. There were stories of brave knights embarking on quests guided by the comet, of sorcerers drawing power from its glow, and of civilizations that owed their very existence to its appearance. As these tales were read out loud in public gatherings, they captured the imagination of the listeners. They realized that the comet wasn&rsquo;t just a celestial event; it was an integral part of their history and identity.</p>
+<h2 id="preparations-underway">Preparations Underway</h2>
+<p>Valoria, already a beacon of beauty and culture</p>
+<p>, seemed to transform overnight. Everywhere you looked, the influence of the Silver Comet was evident.</p>
+<h3 id="the-city-transforms">The City Transforms</h3>
+<p>Streets, once adorned with colorful flags and banners, now shimmered in hues of silver and blue. Artists painted murals depicting the comet&rsquo;s journey, its interactions with various elements of nature, and its deep-seated significance in Valoria&rsquo;s lore. Every morning, the city&rsquo;s main square witnessed a spectacle – hundreds of Valorians coming together, forming patterns that resembled the comet, and performing synchronized dances to the tunes of ancient hymns. It was as if the entire city was in a state of harmonious celebration, ready to welcome the comet&rsquo;s peak appearance.</p>
+<h3 id="the-role-of-artisans">The Role of Artisans</h3>
+<p>Artisans, the heartbeat of Valoria&rsquo;s cultural landscape, found themselves inspired like never before. Jewelers crafted necklaces, rings, and tiaras that captured the comet&rsquo;s essence. Blacksmiths forged weapons with intricate comet designs, believed to carry the celestial body&rsquo;s blessings. Potters made exquisite pottery, each piece telling a story about the Silver Comet. Chefs, not to be left behind, curated special menus. They prepared dishes that not only looked like celestial wonders but were also said to carry the comet&rsquo;s flavors. Every craft and trade in Valoria was touched by the comet&rsquo;s magic, leading to a renaissance of creativity.</p>
+<h3 id="the-comets-market">The Comet&rsquo;s Market</h3>
+<p>Markets, always bustling centers of activity, now had a special section dedicated to the Silver Comet. Tents with shimmering silver roofs housed stalls that sold comet-themed wares. There were potions believed to contain the comet&rsquo;s essence, trinkets that were said to glow brighter under its light, and fabrics that mirrored its colors. Musicians played comet-inspired tunes, and storytellers regaled visitors with tales of the comet&rsquo;s past sojourns. The Comet&rsquo;s Market, as it was now called, became a must-visit destination for both locals and travelers.</p>
+<h3 id="pilgrims-and-seekers">Pilgrims and Seekers</h3>
+<p>Word of Valoria&rsquo;s grand celebrations reached far and wide. From distant lands, caravans of pilgrims and seekers made their way to the city. They brought with them unique traditions, beliefs, and stories about the Silver Comet as observed from their homelands. This influx added a beautiful layer of multiculturalism to the festivities. Valoria became a melting pot of cultures, each one sharing and absorbing the other, all united by the celestial marvel overhead.</p>
+<h2 id="the-grand-festival">The Grand Festival</h2>
+<p>Valoria&rsquo;s calendar had a special date marked – the day when the Silver Comet would be closest to the land. This day was to be celebrated as the Grand Festival, a culmination of weeks of joyous preparations.</p>
+<h3 id="the-feast-of-delights">The Feast of Delights</h3>
+<p>Gastronomy played a pivotal role in Valorian culture, and the Grand Festival was an occasion to showcase it. Chefs from across the kingdom were invited to the capital to prepare a grand feast. Long tables were set up, each dish inspired by the comet. There were soups that shimmered like the night sky, pastries that burst with flavors of celestial fruits, and roasts that were said to carry the warmth of distant stars. As Valorians indulged in this culinary extravaganza, they not only tasted food but also experienced the comet&rsquo;s essence.</p>
+<h3 id="performances-galore">Performances Galore</h3>
+<p>The grand amphitheater, a testament to Valoria&rsquo;s architectural prowess, was the venue for a series of performances. Dancers, their bodies painted in silver, performed ballets that told the comet&rsquo;s story. Acrobats and jesters put up shows that left the audience in splits or in awe. Minstrels, with their instruments, took the spectators on a musical journey across the cosmos. The highlight was a grand play that depicted the Silver Comet&rsquo;s first-ever interaction with Valoria, a tale of love, sacrifice, and celestial wonders.</p>
+<h3 id="starlit-ballads">Starlit Ballads</h3>
+<p>When darkness draped the city, it was time for the balladeers to take center stage. Under the canopy of stars, with the Silver Comet shining the brightest, they sang. Their ballads, composed over weeks of reflection, captured the emotions of every Valorian. From the child who saw the comet as a magical friend to the elder who viewed it as a bridge to bygone days, every perspective was honored in these songs. As the melodies floated in the night air, many found themselves with teary eyes, overwhelmed by the beauty of the moment.</p>
+<h3 id="the-enchanted-maze">The Enchanted Maze</h3>
+<p>A vast field on the city&rsquo;s outskirts was transformed into an enchanted maze. Luminous flowers lit its pathways, and at every turn, there was a surprise. Some paths led to theatrical performances, while others ended in serene spots where one could lie down and gaze at the sky. Navigating the maze became a rite of passage for many Valorians, each one emerging with a unique tale of wonder and discovery.</p>
+<h2 id="the-night-of-reflection">The Night of Reflection</h2>
+<p>The festivities, though filled with joy and excitement, also had moments of introspection. The night after the Grand Festival was one such time – the Night of Reflection.</p>
+<h3 id="the-luminous-procession">The Luminous Procession</h3>
+<p>At twilight, a silent procession began. Valorians, each holding a lantern, walked through the city&rsquo;s streets. The soft glow of their lanterns, combined with the comet&rsquo;s light, created an ethereal atmosphere. This was a time for gratitude, for remembering ancestors, and for sending out wishes to the universe. It was a spectacle of unity, where every individual light contributed to dispelling the darkness.</p>
+<h3 id="the-sages-sermon">The Sage&rsquo;s Sermon</h3>
+<p>Midnight saw the gathering of thousands at the city&rsquo;s main square. They were there to listen to the High Sage of Valoria, a figure of wisdom and knowledge. He spoke of the Silver Comet not just as a celestial body, but as a reminder. A reminder of the transient nature of life, of the importance of cherishing moments, and of the interconnectedness of all things. His words, profound and poignant, resonated with every heart, urging them to seek deeper meanings in everyday experiences.</p>
+<h3 id="dreams-and-visions">Dreams and Visions</h3>
+<p>On this night, many Valorians experienced vivid dreams. These were no ordinary dreams; they were visions guided by the comet&rsquo;s energy. Some saw glimpses of their future, while others met figures from the past. Many woke up with insights that would guide them for years to come. These dreams, it was believed, were the comet&rsquo;s way of directly communicating with the people, sharing its wisdom and blessings.</p>
+<h3 id="the-elders-circle">The Elders&rsquo; Circle</h3>
+<p>At the break of dawn, the oldest members of Valoria formed a circle in the city&rsquo;s oldest park. They spent hours sharing stories, drawing parallels between the past and the present, and discussing the implications of the comet&rsquo;s visit. This gathering was not just a reminiscing of old times; it was a passing down of wisdom, ensuring that the lessons of the past would guide the future.</p>
+<h2 id="the-comets-legacy">The Comet&rsquo;s Legacy</h2>
+<p>The Silver Comet, though transient, left an indelible mark on Valoria. Its impact was not just in the festivities but in the deeper transformations it brought about.</p>
+<h3 id="newfound-bonds">Newfound Bonds</h3>
+<p>The comet&rsquo;s visit saw relationships being forged and old ones being strengthened. Communities that had been distant came together, sharing stories and resources. Families spent time in reflection and gratitude</p>
+<p>, realizing the importance of togetherness. Friendships blossomed as people found common ground in their comet experiences. It was a time of unity, where differences were set aside, and collective joy was embraced.</p>
+<h3 id="artistic-renaissance">Artistic Renaissance</h3>
+<p>The comet sparked a renaissance in Valoria&rsquo;s artistic community. Painters, poets, musicians, and sculptors found themselves inspired in unprecedented ways. Art schools saw a surge in enrollments, and galleries were filled with comet-themed exhibitions. The legacy of this renaissance would be felt for decades, with future generations drawing inspiration from the works created during this time.</p>
+<h3 id="philosophical-discourses">Philosophical Discourses</h3>
+<p>Philosophers and thinkers delved deep into the comet&rsquo;s significance. They engaged in discourses, debating its impact on Valoria&rsquo;s psyche, culture, and future. New philosophies emerged, emphasizing harmony, cosmic interconnectedness, and the pursuit of knowledge. These discussions paved the way for a more introspective and enlightened society.</p>
+<p>The Silver Comet&rsquo;s visit led to the establishment of new traditions. Every year, on the day it was closest to Valoria, a festival would be celebrated, commemorating its visit. Children would be regaled with tales of the comet, ensuring that its stories would be passed down through generations.</p>
+<p>As the comet moved on, continuing its celestial journey, Valoria remained transformed. The Kingdom, already rich in history and culture, now had a new chapter – a chapter that spoke of silver lights, starlit nights, and the magic of the cosmos.</p>
+</div>
+  </div>
+
+  <div class="mt-24 hidden sm:block border-l-2 max-w-[256px] border-gray-200 dark:border-gray-700 pl-8">
+    <div class="">
+  <p class="mb-4 text-lg font-bold text-gray-700 dark:text-gray-100">Tags</p>
+  <div class="flex flex-wrap gap-2">
+      
+    <a href="/tags/css/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Css</a>
+     
+    <a href="/tags/emmc/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">EMMC</a>
+     
+    <a href="/tags/html/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Html</a>
+     
+    <a href="/tags/i2c/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">I2C</a>
+     
+    <a href="/tags/jtag/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">JTAG</a>
+     
+    <a href="/tags/markdown/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">Markdown</a>
+     
+    <a href="/tags/spi/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">SPI</a>
+     
+    <a href="/tags/uart/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">UART</a>
+     
+    <a href="/tags/usb/" class="relative z-10 rounded-full border border-gray-200 px-3 py-0.5 text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white">USB</a>
+    
+  </div>
+</div>
+
+    <div class="mt-8">
+  <p class="mb-4 text-lg font-bold text-gray-700 dark:text-gray-100">Contact</p>
+  <div class="mt-4 flex flex-col gap-4 pb-6">
+    
+    <a href="https://www.github.com//" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-github text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">GitHub</span>
+    </a>
+    
+    <a href="http://twitter.com/" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-twitter text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">Twitter</span>
+    </a>
+    
+    <a href="http://www.linkedin.com/company/" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-brands fa-linkedin-in text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">LinkedIn</span>
+    </a>
+    
+    <a href="mailto:info@example.com" class="flex items-center justify-start text-gray-900 hover:text-gray-600 dark:text-gray-300 hover:dark:text-gray-100" rel="noopener noreferrer" target="_blank">
+      <div class="flex w-6 justify-center">
+        <i class="fa-solid fa-envelope text-xl"></i>
+      </div>
+      <span class="ml-2 self-center pt-1 text-sm font-medium">Email</span>
+    </a>
+    
+  </div>
+</div>
+
+    <div class="sticky top-12 mt-4 hidden self-start pr-8 lg:block">
+      <p class="text-lg mb-4 font-bold text-gray-700 dark:text-gray-100">Navigator</p>
+      <nav class="toc js-toc dark:text-gray-100"></nav>
+    </div>
+  </div>
+</div>
+
+<script src="/js/tocbot.min.js"></script>
+<script>
+  tocbot.init({
+    headingsOffset: 120,
+    scrollSmoothOffset: -120,
+    positionFixedClass: "is-position-fixed",
+    
+    
+    tocSelector: ".js-toc",
+    
+    contentSelector: ".js-toc-content",
+    
+    headingSelector: "h1, h2, h3",
+    
+    hasInnerContainers: true,
+  });
+</script>
+ <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<footer class="bg-light" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="mt-16 border-t-2 border-gray-200 pt-8 dark:border-gray-700 sm:mt-20 lg:mt-24">
+      <p class="text-center text-base leading-5 text-gray-900 dark:text-gray-100">&copy; 2024 sitename. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/darkmode.js"></script>
+    <script src="/js/lightbox-plus-jquery.min.js"></script>
+    <script src="/js/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: "rgb(71 85 105)",
+        textColor: "#fff",
+        scrollDuration: 300, 
+        
+        cornerOffset: 30, 
+      });
+    </script>
+  </body>
+</html>

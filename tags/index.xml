@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on sitename</title>
+    <link>https://hack-dot-com.github.io/tags/</link>
+    <description>Recent content in Tags on sitename</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Jul 2022 11:13:32 -0400</lastBuildDate>
+    <atom:link href="https://hack-dot-com.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EMMC</title>
+      <link>https://hack-dot-com.github.io/tags/emmc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/emmc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JTAG</title>
+      <link>https://hack-dot-com.github.io/tags/jtag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/jtag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UART</title>
+      <link>https://hack-dot-com.github.io/tags/uart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/uart/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SPI</title>
+      <link>https://hack-dot-com.github.io/tags/spi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/spi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>I2C</title>
+      <link>https://hack-dot-com.github.io/tags/i2c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/i2c/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>USB</title>
+      <link>https://hack-dot-com.github.io/tags/usb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/usb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Css</title>
+      <link>https://hack-dot-com.github.io/tags/css/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Html</title>
+      <link>https://hack-dot-com.github.io/tags/html/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://hack-dot-com.github.io/tags/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://hack-dot-com.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
