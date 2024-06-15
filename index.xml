@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sitename</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on sitename</description>
+    <title>sitename on hackdotcom</title>
+    <link>https://hack-dot-com.github.io/</link>
+    <description>Recent content in sitename on hackdotcom</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jul 2022 11:13:32 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hack-dot-com.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Enchanted Isles of Lunaria</title>
-      <link>http://localhost:1313/posts/the-enchanted-isles-of-lunaria/</link>
+      <link>https://hack-dot-com.github.io/posts/the-enchanted-isles-of-lunaria/</link>
       <pubDate>Fri, 29 Jul 2022 11:13:32 -0400</pubDate>
-      <guid>http://localhost:1313/posts/the-enchanted-isles-of-lunaria/</guid>
+      <guid>https://hack-dot-com.github.io/posts/the-enchanted-isles-of-lunaria/</guid>
       <description>In the annals of maritime lore, there exists a legend, one that speaks of an archipelago untouched by time and unmarred by civilization. Lunaria, as it is known, is more than just islands; it is where magic intertwines with nature, crafting tales of wonder. This place, beyond even the most elaborate of fables, thrived in a dimension separate from our mundane world. Many considered it just a fragment of imagination, a story passed down through countless generations.</description>
     </item>
     <item>
       <title>The Awakening of Valoria</title>
-      <link>http://localhost:1313/posts/the-awakening-of-valoria/</link>
+      <link>https://hack-dot-com.github.io/posts/the-awakening-of-valoria/</link>
       <pubDate>Thu, 28 Jul 2022 11:00:59 -0400</pubDate>
-      <guid>http://localhost:1313/posts/the-awakening-of-valoria/</guid>
+      <guid>https://hack-dot-com.github.io/posts/the-awakening-of-valoria/</guid>
       <description>The Kingdom of Valoria, hidden amidst towering mountains and the serene embrace of the sea, was a treasure trove of tales and tradition. Its rich tapestry of history and vibrant culture was the stuff of legends. And then, on a day that started like any other, the land was to see a phenomenon that would be recounted for generations.&#xA;The Rise of the Silver Comet As the first light of dawn stretched across the horizon, a mesmerizing silvery streak pierced the sky, casting a magical glow.</description>
     </item>
     <item>
       <title>The Commotion in Paris</title>
-      <link>http://localhost:1313/posts/the-commotion-in-paris/</link>
+      <link>https://hack-dot-com.github.io/posts/the-commotion-in-paris/</link>
       <pubDate>Wed, 27 Jul 2022 10:58:08 -0400</pubDate>
-      <guid>http://localhost:1313/posts/the-commotion-in-paris/</guid>
+      <guid>https://hack-dot-com.github.io/posts/the-commotion-in-paris/</guid>
       <description>Paris of the late 15th century was no stranger to noise and clamor, but on a chilly morning, three hundred and forty-eight years, six months, and nineteen days ago, an unexpected uproar shook its residents from their sleep.&#xA;The Sound of Bells All around the city, bells echoed with a fervor seldom experienced. The harmonious cacophony resounded through the streets. From the historic heart of the city to its sprawling outskirts, from the hallowed university corridors to the charming and secluded town alleys, their chimes were not just sounds but heralds of a significant day.</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>http://localhost:1313/posts/markdown-syntax/</link>
+      <link>https://hack-dot-com.github.io/posts/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/markdown-syntax/</guid>
+      <guid>https://hack-dot-com.github.io/posts/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://hack-dot-com.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://hack-dot-com.github.io/about/</guid>
       <description>About Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime corporis cumque totam aliquid nam sint inventore optio modi neque laborum officiis necessitatibus, facilis placeat pariatur!&#xA;Voluptatem, sed harum pariatur adipisci voluptates voluptatum cumque, porro sint minima similique magni perferendis fuga! Optio vel ipsum excepturi tempore reiciendis id quidem?&#xA;Ordered List List item List item List item List item List item Unordered List List item List item List item List item List item Emphasis Emphasis, aka italics, with asterisks or underscores.</description>
     </item>
   </channel>

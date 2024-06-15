@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JTAG on sitename</title>
-    <link>http://localhost:1313/tags/jtag/</link>
-    <description>Recent content in JTAG on sitename</description>
+    <title>JTAG on hackdotcom</title>
+    <link>https://hack-dot-com.github.io/tags/jtag/</link>
+    <description>Recent content in JTAG on hackdotcom</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jul 2022 11:13:32 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/jtag/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hack-dot-com.github.io/tags/jtag/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Enchanted Isles of Lunaria</title>
-      <link>http://localhost:1313/posts/the-enchanted-isles-of-lunaria/</link>
+      <link>https://hack-dot-com.github.io/posts/the-enchanted-isles-of-lunaria/</link>
       <pubDate>Fri, 29 Jul 2022 11:13:32 -0400</pubDate>
-      <guid>http://localhost:1313/posts/the-enchanted-isles-of-lunaria/</guid>
+      <guid>https://hack-dot-com.github.io/posts/the-enchanted-isles-of-lunaria/</guid>
       <description>In the annals of maritime lore, there exists a legend, one that speaks of an archipelago untouched by time and unmarred by civilization. Lunaria, as it is known, is more than just islands; it is where magic intertwines with nature, crafting tales of wonder. This place, beyond even the most elaborate of fables, thrived in a dimension separate from our mundane world. Many considered it just a fragment of imagination, a story passed down through countless generations.</description>
     </item>
     <item>
       <title>The Awakening of Valoria</title>
-      <link>http://localhost:1313/posts/the-awakening-of-valoria/</link>
+      <link>https://hack-dot-com.github.io/posts/the-awakening-of-valoria/</link>
       <pubDate>Thu, 28 Jul 2022 11:00:59 -0400</pubDate>
-      <guid>http://localhost:1313/posts/the-awakening-of-valoria/</guid>
+      <guid>https://hack-dot-com.github.io/posts/the-awakening-of-valoria/</guid>
       <description>The Kingdom of Valoria, hidden amidst towering mountains and the serene embrace of the sea, was a treasure trove of tales and tradition. Its rich tapestry of history and vibrant culture was the stuff of legends. And then, on a day that started like any other, the land was to see a phenomenon that would be recounted for generations.&#xA;The Rise of the Silver Comet As the first light of dawn stretched across the horizon, a mesmerizing silvery streak pierced the sky, casting a magical glow.</description>
     </item>
   </channel>
