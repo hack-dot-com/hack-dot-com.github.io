@@ -2,63 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://hack-dot-com.github.io/tags/emmc/</loc>
+    <loc>http://localhost:1313/tags/emmc/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/jtag/</loc>
+    <loc>http://localhost:1313/tags/jtag/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/posts/the-enchanted-isles-of-lunaria/</loc>
+    <loc>http://localhost:1313/posts/the-enchanted-isles-of-lunaria/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/uart/</loc>
+    <loc>http://localhost:1313/tags/uart/</loc>
     <lastmod>2022-07-29T11:13:32-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/spi/</loc>
+    <loc>http://localhost:1313/tags/spi/</loc>
     <lastmod>2022-07-28T11:00:59-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/posts/the-awakening-of-valoria/</loc>
+    <loc>http://localhost:1313/posts/the-awakening-of-valoria/</loc>
     <lastmod>2022-07-28T11:00:59-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/i2c/</loc>
+    <loc>http://localhost:1313/tags/i2c/</loc>
     <lastmod>2022-07-27T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/posts/the-commotion-in-paris/</loc>
+    <loc>http://localhost:1313/posts/the-commotion-in-paris/</loc>
     <lastmod>2022-07-27T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/usb/</loc>
+    <loc>http://localhost:1313/tags/usb/</loc>
     <lastmod>2022-07-27T10:58:08-04:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/css/</loc>
+    <loc>http://localhost:1313/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/html/</loc>
+    <loc>http://localhost:1313/tags/html/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/tags/markdown/</loc>
+    <loc>http://localhost:1313/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/posts/markdown-syntax/</loc>
+    <loc>http://localhost:1313/posts/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/categories/syntax/</loc>
+    <loc>http://localhost:1313/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/categories/themes/</loc>
+    <loc>http://localhost:1313/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://hack-dot-com.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url>
 </urlset>
