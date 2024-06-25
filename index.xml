@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sitename on hackdotcom</title>
+    <title>hackdotcom</title>
     <link>https://hack-dot-com.github.io/</link>
-    <description>Recent content in sitename on hackdotcom</description>
+    <description>Recent content on hackdotcom</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 29 Jul 2022 11:13:32 -0400</lastBuildDate>
